@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            width: 100%;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows: minmax(80px,min-content) minmax(60px,min-content) minmax(40px,min-content) minmax(200px,min-content) minmax(50px,min-content) ;
+            gap: 10px;
+            grid-auto-rows: 80px;
+        }
+        .items1{
+            background-color: brown;
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+        
+        .items2{
+            background-color: green;
+            grid-column: span 3;
+            grid-row: span 1;
+            
+        }
+        
+        .items3{
+            background-color: dodgerblue;
+        }
+        
+        .items4{
+            background-color: orange;
+        }
+        
+        .items5{
+            background-color: tomato;
+           
+            grid-column: span 1;
+            grid-row: span 3;
+        }
+        .items6{
+            background-color: yellowgreen;
+            grid-column: span 2;
+            grid-row: span 2; 
+        }
+        .items7{
+            background-color: darkcyan;
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+
+        @media screen and (max-width:500px) {
+            .items5{
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .items6{
+                grid-column: span 3;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="items1">A</div>
+        <div class="items2">B</div>
+        <div class="items3">C</div>
+        <div class="items4">D</div>
+        <div class="items5">E</div>
+        <div class="items6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet aut provident corporis quo deleniti. Provident quisquam earum enim amet voluptate, dolorum vel quis deserunt dicta dignissimos! Voluptas, tempore obcaecati nulla fugit quisquam officia itaque dolores nostrum voluptates pariatur optio suscipit possimus odio, quia ullam sunt delectus cum voluptatibus! Accusamus dolore quos perferendis error consectetur. Corporis, dolor. Recusandae eos placeat veritatis suscipit ipsa aut tempora quae laborum expedita dicta distinctio, harum nemo id obcaecati quibusdam enim, repellat minima nisi tempore consequuntur sunt sequi. Ad itaque enim modi laboriosam totam exercitationem odit facere nisi. Pariatur quasi quo perspiciatis delectus, optio quod earum!</div>
+        <div class="items7">G</div>
+    </div>
+</body>
+</html>

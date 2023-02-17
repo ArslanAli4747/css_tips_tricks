@@ -1,0 +1,583 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    /* overflow-x: hidden; */
+}
+.sidebar{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: blue;
+    border-left: 5px solid blue;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.5s;
+
+}
+.sidebar.active{
+    width: 80px;
+}
+.sidebar ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar ul li{
+    list-style: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    margin-top: 10px;
+}
+.closebtn{
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    padding: 10px;
+    flex: 3;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: none;
+    
+}
+.closebtn ion-icon{
+    color: white;
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+}
+.sidebar ul .childe1 {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    
+}
+
+.sidebar ul li a{
+    position: relative;
+    width: 100%;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: flex;
+}
+
+.sidebar ul li a .icon{
+    min-width: 60px;
+    height: 60px;
+    line-height: 76px;
+    padding-left: 15px;
+}
+
+.sidebar ul li a .icon ion-icon{
+  font-size: 1.6em;
+}
+
+.sidebar ul li a .text{
+    padding-left: 20px;
+    height: 60px;
+    line-height: 60px;
+}
+.sidebar ul li:hover,.sidebar ul li.active{
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.sidebar ul li:hover a,.sidebar ul li.active a{
+    color: blue;
+}
+.sidebar ul li.active a::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -6px;
+    top: -50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 25px 0px 10px white;
+    pointer-events: none;
+}
+.sidebar ul li.active a::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -6px;
+    bottom: -50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px -25px 0px 10px white;
+    pointer-events: none;
+}
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; 
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar{
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100px;
+    position: fixed;
+    width: calc(100% - 300px);
+    left: 300px;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.4);
+    transition: 0.5s;
+}
+.topbar.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar .menubutton{
+    padding: 10px;
+    flex: 3;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.topbar .menubutton ion-icon{
+    color: white;
+    height: 60px;
+    width: 60px;
+    background-color: blue;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+}
+.topbar .menubutton ion-icon:hover{
+    color: blue;
+   
+    background-color: white;
+}
+.topbar .profile{
+    flex: 3;    
+    position: relative;
+    padding: 10px;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.topbar .profile img{
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+}
+.topbar .search{
+    flex: 6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 2.5em;
+}
+.topbar .search input{
+    width: 100%;
+    outline: none;
+    border: 2px solid;
+    padding: 25px;
+    border-radius: 30px;
+}
+.topbar .search ion-icon{
+    position: absolute;
+    right: 10px;
+}
+.topbar .search ion-icon:hover{
+    color: blue;
+}
+
+
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 110px;
+    padding: 60px;
+}
+.dashboard .card{
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    box-shadow: 1px 2px 5px 0px rgba(1,1,1,0.3);
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard .card .number{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: blue;
+    margin-bottom: 25px;
+
+}
+.dashboard .card .text{
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(90, 90, 99);
+    margin-bottom: 10px;
+
+}
+.dashboard .card .icon{
+    margin-left: 15px;
+    
+}
+.dashboard .card .icon ion-icon{
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(90, 90, 99);
+    margin-bottom: 10px;
+
+}
+
+.dashboard .card:hover
+
+{
+    background-color: blue;
+   
+}
+
+.dashboard .card:hover .number,
+.dashboard .card:hover .text,
+.dashboard .card:hover .icon ion-icon{
+    color: white;
+}
+
+
+.orders{
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    padding: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.orders .ordersList{
+    flex: 8;
+    border-radius: 20px;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.orders .ordersList .orderHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.orders .ordersList .orderHeader .text{
+    font-size: 2em;
+    font-weight: bold;
+    color: blue;
+}
+.orders .ordersList .orderHeader .btn a{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px 0px black;
+    white-space: nowrap;
+
+}
+.orders .ordersList .orderHeader .btn a:hover{
+ 
+    background-color: white;
+    color: blue;
+
+}
+
+.content{
+    width: 100%;
+    white-space: nowrap;
+    
+}
+.content .headers{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 2px;
+        gap: 30px;
+    padding: 0px 5px;
+    min-width: 400px;
+}
+.content .headers div{
+    flex: 1;
+    text-align: center;
+}
+
+.content .headers div:nth-child(1){
+    text-align: start;
+}
+.content .body .tr{
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    margin: 5px 2px;
+    padding: 10px 5px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 10px;
+
+}
+.content .body .tr div{
+    padding: 5px;
+    border-radius: 10px;
+}
+.content .body .tr:hover{
+    background-color: blue;
+    color: white;
+}
+.td.status.delivered{
+    background-color: green;
+    color: white;
+}
+.td.status.pending{
+    background-color: orange;
+}
+.td.status.returnd{
+    background-color: orangered;
+}
+.customer{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+.customer .customerHeader{
+    display: flex;
+    flex-wrap: wrap;
+    color: blue;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.customer .detail{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.customer .detail .tr{
+    display: flex;
+    gap: 20px;
+    min-width: 300px;
+
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.customer .detail .tr:hover{
+    background-color: blue;
+    color: white;
+}
+
+
+.customer .detail .tr .td.profile{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+
+.customer .detail .tr .td.profile img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.td.text h3{
+    font-weight: bold;
+    font-size: 1.4em;
+
+}
+.td.text h4{
+    color: rgb(77, 71, 71);
+}
+.customer .detail .tr:hover .td.text h4{
+    color: white;
+}
+
+
+
+  
+@media screen and (max-width:900px) {
+    .sidebar{
+        width: 200px;
+    }
+    .main{
+        width: calc(100% - 200px);
+        left: 200px;
+    }
+    .topbar{
+        width: calc(100% - 200px);
+        left: 200px;
+    }
+    .ordersList{
+        flex: 12;
+    }
+    
+    }
+
+    @media screen and (max-width:710px) {
+        .orders{
+            display: block;
+            padding: 10px;
+        }
+        .ordersList{
+            overflow-x: auto;
+        }
+        
+    }
+@media screen and (max-width:620px) {
+        .orders{
+          padding: 5px;
+      
+        }
+        .content .headers{
+          min-width: 250px;
+        }
+        .content .body .tr{
+          min-width: 250px;
+          
+        }
+        .content .headers{
+            gap: 0px;
+        } 
+        .customer .detail .tr{
+          min-width: 250px;
+          
+        }
+        .main{
+            width: 100%;
+            left: 0px;
+            transition: 0.5s;
+            display: flex;
+        }
+        .main.active{
+           display: none;
+           transition: 0.5s;
+        }
+        .topbar.active{
+            display: none;
+            transition: 0.5s;
+        }
+        .topbar{
+            display: flex;
+            width: 100%;
+            left: 0;
+            transition: 0.5s;
+        }
+        .sidebar{
+            width: 100%;
+            left: -100%;
+            transition: 0.5s;
+
+            z-index: 1001;
+        }
+        .sidebar.active{
+            width: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+        .closebtn{
+            display: block;
+        }
+   
+        
+      
+      }
+
+@media screen and (max-width:460px) {
+
+       .topbar .menubutton{
+            font-size: 1.8em;   
+        }
+       .topbar .menubutton ion-icon{
+            height: 40px;
+            width: 40px;
+        }
+        .topbar .profile img{
+            width: 60px;
+            height: 60px;
+        }
+        .topbar .search input{
+            padding:14px 28px
+        }
+
+      }
+
+      @media screen and (max-width:380px) {
+
+        .dashboard{
+            padding: 10px;
+        }
+        .topbar .menubutton{
+            font-size: 1em;   
+        }
+       .topbar .menubutton ion-icon{
+            height: 20px;
+            width: 20px;
+        }
+        .topbar .profile img{
+            width: 30px;
+            height: 30px;
+        }
+        .topbar .search{
+            font-size: 1em;
+            flex: 10;
+           
+        }
+        .topbar .search input{
+            padding:10px 20px;
+            
+        }
+
+
+ 
+       }
+ 

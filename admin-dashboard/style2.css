@@ -273,6 +273,24 @@ body{
     color: white;
 }
 
+.charts{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 20px;
+    justify-content: center;
+    align-self: center;
+  
+}
+.charts .chart{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex: 1;
+    min-height: 300px;
+    box-shadow: 1px 2px 5px 0px rgba(1,1,1,0.3);
+}
 
 .orders{
     position: relative;
@@ -467,6 +485,9 @@ body{
         .orders{
             display: block;
             padding: 10px;
+        }
+        .charts{
+            padding: 20px;
         }
         .ordersList{
             overflow-x: auto;

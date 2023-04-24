@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cadetblue;
+}
+.main{
+    width: 200px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateY(300deg);
+    border: 1px solid black;
+}
+.main div{
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    animation: anime 10s linear infinite;
+}
+@keyframes anime {
+    0%{
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateX(360deg);
+        
+    }
+}
+.main div span{
+    display: block;
+    position: absolute;
+    inset: 0;
+    border: 2px solid orange;
+    border-left: 3px solid orange;
+    border-right: 3px solid orange;
+}
+.main div span:nth-child(1){
+    transform: rotateX(0deg);
+}
+.main div span:nth-child(2){
+    transform: rotateX(10deg);
+}
+.main div span:nth-child(3){
+    transform: rotateX(20deg);
+}
+.main div span:nth-child(4){
+    transform: rotateX(30deg);
+}
+.main div span:nth-child(5){
+    transform: rotateX(40deg);
+}
+.main div span:nth-child(6){
+    transform: rotateX(50deg);
+}
+.main div span:nth-child(7){
+    transform: rotateX(60deg);
+}
+.main div span:nth-child(8){
+    transform: rotateX(70deg);
+}
+.main div span:nth-child(9){
+    transform: rotateX(80deg);
+}
+.main div span:nth-child(10){
+    transform: rotateX(90deg);
+}
+.main div span:nth-child(11){
+    transform: rotateX(100deg);
+}
+.main div span:nth-child(12){
+    transform: rotateX(110deg);
+}
+.main div span:nth-child(13){
+    transform: rotateX(120deg);
+}
+.main div span:nth-child(14){
+    transform: rotateX(130deg);
+}
+.main div span:nth-child(15){
+    transform: rotateX(140deg);
+}
+.main div span:nth-child(16){
+    transform: rotateX(150deg);
+}
+.main div span:nth-child(17){
+    transform: rotateX(160deg);
+}
+.main div span:nth-child(18){
+    transform: rotateX(170deg);
+}
+.main div span::after,
+.main div span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(white,white);
+}
+
+.main div span::after{
+    bottom: 0;
+    left: 0;
+}
+.main div span::before{
+    top: 0;
+    left: 0;
+}
+

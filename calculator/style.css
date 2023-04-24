@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: #000000cc;
+    color: white;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cal{
+    width: 300px;
+    display: grid;
+}
+.cal #value{
+    grid-column: span 4;
+    background-color: rgb(160, 177, 160);
+    padding: 10px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    height: 80px;
+    line-height: 40px;
+    box-shadow: inset 0px 5px 1px 0px rgba(0, 0, 0, 0.39),
+    0px 5px 1px 0px rgba(0, 0, 0, 0.274),
+    2px 0px 1px 0px rgba(0, 0, 0, 0.274);
+    
+}
+.cal span{
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    min-width: 70px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(197, 194, 194, 0.205);
+    box-shadow: inset 0px 8px 1px 0px rgba(41, 40, 40, 0.3),
+    0px 5px 10px 0px rgba(0, 0, 0, 0.274),
+    2px 0px 10px 0px rgba(0, 0, 0, 0.274),
+    0px -5px 10px 0px rgba(0, 0, 0, 0.274),
+    -2px 0px 10px 0px rgba(0, 0, 0, 0.274);
+    
+    
+}
+/* .cal span::before{
+    content: '';
+    position: absolute;
+    inset: 5px 3px;
+    background-color: whitesmoke;
+    height: 2px;
+
+} */
+.cal #clear{
+    grid-column: span 2;
+    background-color: red;
+}
+.cal #plus{
+    grid-row: span 2;
+    background-color: green;
+}
+#equal{
+    background-color: blue;
+}
+.cal span:active{
+
+    box-shadow: inset 2px 2px 5px black,
+    inset -2px -2px 5px black;
+    color: lightseagreen;
+    /* filter: drop-shadow(0px 0px 2px lightseagreen); */
+}

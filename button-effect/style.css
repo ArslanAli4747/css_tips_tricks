@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #13aa63b2;
+}
+#btn{
+    position: relative;
+    padding: 10px 40px;
+    font-size: larger;
+    text-transform: lowercase;
+    border-radius: 10px;
+    background-color: rgb(55, 55, 56);
+    color: white;
+    display: block;
+    width: 200px;
+    height: 60px;
+    transition: 0.5s;
+    overflow: hidden;
+    border: 1px;
+    cursor: pointer;
+}
+#btn span{
+    position: absolute;
+    /* background-color: aliceblue; */
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    /* border: 2px solid; */
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    animation: spananime 1s linear ;
+}
+@keyframes spananime {
+
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 300px;
+        height: 300px;
+    }
+}

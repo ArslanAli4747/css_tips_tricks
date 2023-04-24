@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.elastic{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(124, 116, 116);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.elastic svg{
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    fill: none;
+    
+}
+.elastic .ball{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    box-shadow: inset 0px -14px 5px 0px gray,
+    inset 0px 4px 2px 0px gray;
+    background-color: white;
+    border-radius: 100%;
+    bottom: 73px;
+    animation: ballanimate 2s ease-in infinite,changebgcolor 2s linear infinite;
+}
+.elastic svg path{
+    width: 200px;
+    stroke: rgb(204, 15, 78);
+    stroke-width: 10;
+    stroke-linecap: round;
+    d: path("M 10 80 Q 190 80 390 80");
+    animation: animateLine 2s linear infinite,changecolor 2s linear infinite;
+}
+@keyframes animateLine {
+    0%{
+        d: path("M 10 80 Q 190 80 390 80");
+        
+    }
+    10%{
+        d: path("M 10 80 Q 190 200 390 80");
+        
+    }
+    20%{
+        d: path("M 10 80 Q 190 10 390 80");
+        
+    }
+    
+    30%{
+        d: path("M 10 80 Q 190 180 390 80");
+        
+    }
+    
+    35%{
+        d: path("M 10 80 Q 190 100 390 80");
+        
+    }
+    40%{
+        d: path("M 10 80 Q 190 120 390 80");
+        
+    }
+    
+    45%{
+        d: path("M 10 80 Q 190 100 390 80");
+        
+    }
+    50%{
+        d: path("M 10 80 Q 190 120 390 80");
+        
+    }
+    55%{
+        d: path("M 10 80 Q 190 100 390 80");
+        
+    }
+    
+    60%{
+        d: path("M 10 80 Q 190 120 390 80");
+        
+    }
+    
+}
+
+@keyframes ballanimate {
+    0%{
+        transform: translateY(0px);
+        box-shadow: inset 0px -2px 5px 0px rgb(17, 16, 16),
+    inset 0px 4px 2px 0px rgb(14, 13, 13);
+    }
+    11%{
+        transform: translateY(40px);
+    }
+    30%{
+        transform: translateY(-400px);
+        
+    }   
+}
+
+@keyframes changecolor {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+/* @keyframes changebgcolor {
+    0%{
+        background: red;
+    }
+    50%{
+        background: green;
+    }
+    100%{
+        background-color: yellow;
+    }
+} */

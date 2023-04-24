@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(54, 52, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.circle{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 10px solid snow;
+    border-radius: 100%;
+}
+.circle::before{
+    content: "<h1>hello</h1>";
+    position: absolute;
+    color: white;
+    inset: -20px;
+    font-size: 30px;
+    border: 40px solid green;
+    border-top: 40px solid snow;
+    border-radius: 100%;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    /* 50%{
+        transform: rotate(360deg);
+        
+    } */
+    100%{
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+        
+    }
+}

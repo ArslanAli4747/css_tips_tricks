@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Button EFfect</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <script>
+        const btn = document.querySelector("#btn")
+        const btnpos = btn.getBoundingClientRect()
+        btn.addEventListener("click",function(e){
+            // console.log(e);
+            const x = e.x - btnpos.left;
+            const y = e.y - btnpos.top;
+            // console.log("left : ",x);
+            // console.log("top : ",y);
+            const randomColor = [Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255),(Math.random()*0.5)]
+            const color = 'rgb('+randomColor[0]+','+randomColor[1]+','+randomColor[2]+','+randomColor[3]+')'
+        
+            let span = document.createElement("span")
+            const bg = '#'+Math.floor(Math.random()*0XFFFFF).toString()
+            span.style.left = x + 'px';
+            span.style.top = y + 'px';
+            span.style.backgroundColor=color
+            // console.log(bg);
+            this.appendChild(span)
+            setInterval(()=>{
+                span.remove()
+            },2000)
+
+        })
+
+    </script>
+</body>
+</html>
